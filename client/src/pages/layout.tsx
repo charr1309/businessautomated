@@ -48,6 +48,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               ))}
               <Button
                 size="sm"
+                variant="outline"
+                className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+                data-testid="button-featured-agents"
+                onClick={() => window.location.href = createPageUrl("AgentLibrary")}
+              >
+                Featured Agents
+              </Button>
+              <Button
+                size="sm"
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                 data-testid="button-get-started"
                 onClick={() => window.location.href = createPageUrl("Contact")}
@@ -86,6 +95,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </span>
                   </Link>
                 ))}
+                <Button
+                  variant="outline"
+                  className="w-full border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    window.location.href = createPageUrl("AgentLibrary");
+                  }}
+                  data-testid="button-mobile-featured-agents"
+                >
+                  Featured Agents
+                </Button>
                 <Button
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   onClick={() => {
