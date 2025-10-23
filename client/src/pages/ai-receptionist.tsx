@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { createPageUrl } from "@/lib/utils";
+import InteractiveDemo from "@/components/InteractiveDemo";
 
 export default function AIReceptionist() {
   const features = [
@@ -87,6 +88,34 @@ export default function AIReceptionist() {
                 Watch Demo
               </Button>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Interactive Demo Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-900">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" data-testid="heading-demo-section">
+              Try the Interactive Demo
+            </h2>
+            <p className="text-xl text-gray-300">
+              See our AI receptionist in action - book a fake appointment and watch the automation workflow
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <InteractiveDemo />
           </motion.div>
         </div>
       </section>
