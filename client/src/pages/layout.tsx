@@ -1,6 +1,12 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { createPageUrl } from "@/lib/utils";
 
@@ -46,15 +52,49 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </span>
                 </Link>
               ))}
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
-                data-testid="button-featured-agents"
-                onClick={() => window.location.href = createPageUrl("AgentLibrary")}
-              >
-                Featured Agents
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
+                    data-testid="button-featured-agents"
+                  >
+                    Featured Agents
+                    <ChevronDown className="w-4 h-4 ml-1" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-56 bg-slate-800 border-slate-700">
+                  <DropdownMenuItem
+                    className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                    onClick={() => window.location.href = createPageUrl("AIReceptionist")}
+                    data-testid="dropdown-ai-receptionist"
+                  >
+                    AI Receptionist
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                    onClick={() => window.location.href = createPageUrl("SpeedToLead")}
+                    data-testid="dropdown-speed-to-lead"
+                  >
+                    Speed-to-Lead
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                    onClick={() => window.location.href = createPageUrl("AIBookingSystem")}
+                    data-testid="dropdown-ai-booking"
+                  >
+                    AI Booking System
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                    onClick={() => window.location.href = createPageUrl("SocialMediaBot")}
+                    data-testid="dropdown-social-media"
+                  >
+                    Social Media Bot
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Button
                 size="sm"
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
@@ -95,17 +135,63 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </span>
                   </Link>
                 ))}
-                <Button
-                  variant="outline"
-                  className="w-full border-blue-500/50 text-blue-400 hover:bg-blue-500/10"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    window.location.href = createPageUrl("AgentLibrary");
-                  }}
-                  data-testid="button-mobile-featured-agents"
-                >
-                  Featured Agents
-                </Button>
+                
+                {/* Featured Agents - Mobile Dropdown */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="w-full border-blue-500/50 text-blue-400 hover:bg-blue-500/10 justify-between"
+                      data-testid="button-mobile-featured-agents"
+                    >
+                      Featured Agents
+                      <ChevronDown className="w-4 h-4" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-[calc(100vw-2rem)] bg-slate-800 border-slate-700">
+                    <DropdownMenuItem
+                      className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        window.location.href = createPageUrl("AIReceptionist");
+                      }}
+                      data-testid="dropdown-mobile-ai-receptionist"
+                    >
+                      AI Receptionist
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        window.location.href = createPageUrl("SpeedToLead");
+                      }}
+                      data-testid="dropdown-mobile-speed-to-lead"
+                    >
+                      Speed-to-Lead
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        window.location.href = createPageUrl("AIBookingSystem");
+                      }}
+                      data-testid="dropdown-mobile-ai-booking"
+                    >
+                      AI Booking System
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="cursor-pointer hover:bg-slate-700 focus:bg-slate-700 text-gray-300"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        window.location.href = createPageUrl("SocialMediaBot");
+                      }}
+                      data-testid="dropdown-mobile-social-media"
+                    >
+                      Social Media Bot
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                
                 <Button
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                   onClick={() => {
