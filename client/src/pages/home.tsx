@@ -333,7 +333,7 @@ export default function Home() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
         {/* Fixed Background Image - Desktop/Tablet */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat cta-bg-robot-head hidden sm:block"
+          className="absolute inset-0 bg-cover bg-fixed bg-no-repeat cta-bg-robot-head hidden sm:block"
           style={{
             backgroundImage:
               "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/45a4dfa4a_getty-images-fMx5M3lg8oI-unsplash.jpg')",
