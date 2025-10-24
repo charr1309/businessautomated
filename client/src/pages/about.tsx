@@ -422,6 +422,28 @@ export default function About() {
         </div>
       </section>
 
+      {/* Working Together Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Card className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border-blue-500/30">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-4 text-center" data-testid="heading-working-together">
+                  Working Together
+                </h3>
+                <p className="text-gray-300 text-center leading-relaxed" data-testid="text-working-together">
+                  Both partners collaborate to deliver AI-powered, automation-driven digital transformation solutions. Mehdi focuses on building and innovating AI applications, while Carlton ensures these solutions are strategically integrated and automated across business systems to deliver measurable outcomes.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-slate-900/50">
         <div className="max-w-4xl mx-auto text-center">
