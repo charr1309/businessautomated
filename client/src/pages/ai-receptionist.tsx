@@ -212,19 +212,65 @@ export default function AIReceptionist() {
 
       {/* CTA Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
-        {/* Fixed Background Image */}
+        {/* Fixed Background Image - Desktop/Tablet */}
         <div
-          className="absolute inset-0 bg-fixed bg-no-repeat"
+          className="absolute inset-0 bg-fixed bg-no-repeat cta-bg-robot-hand hidden sm:block"
           style={{
             backgroundImage: "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/6656d163b_alex-shuper-uFCmJ6fiWGY-unsplash.png')",
-            backgroundSize: '30%',
-            backgroundPosition: 'center'
           }}
         ></div>
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/60 hidden sm:block"></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Mobile Landscape (568px-767px): Two Column Layout */}
+        <div className="max-w-7xl mx-auto relative z-10 hidden min-[568px]:flex md:hidden items-center gap-8">
+          <div className="flex-1 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" data-testid="heading-cta-section">
+              Ready to Deploy Your AI Receptionist?
+            </h2>
+            <p className="text-lg text-blue-100 mb-6">
+              Let us set up your AI receptionist. Professional implementation with full support.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 shadow-xl border-2 border-white/80"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
+          <div className="flex-1">
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/6656d163b_alex-shuper-uFCmJ6fiWGY-unsplash.png"
+              alt="AI Robot Hand"
+              className="w-full h-auto object-contain max-h-96"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Portrait (<568px): Single Column, No Image */}
+        <div className="max-w-full mx-auto text-center relative z-10 block min-[568px]:hidden">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700">
+            <h2 className="text-2xl font-bold text-white mb-4" data-testid="heading-cta-section">
+              Ready to Deploy Your AI Receptionist?
+            </h2>
+            <p className="text-base text-blue-100 mb-6">
+              Let us set up your AI receptionist. Professional implementation with full support.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 shadow-xl border-2 border-white/80"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
+        </div>
+
+        {/* Desktop/Tablet (≥768px): Text Over Background */}
+        <div className="max-w-7xl mx-auto text-center relative z-10 hidden md:block">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

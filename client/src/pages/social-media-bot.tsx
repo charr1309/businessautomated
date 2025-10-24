@@ -178,15 +178,14 @@ export default function SocialMediaBot() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
+        {/* Desktop/Tablet (≥768px): Background image */}
+        <div className="max-w-7xl mx-auto hidden md:block">
           <div className="relative overflow-hidden rounded-2xl bg-black">
             <div
-              className="absolute inset-0 bg-fixed bg-no-repeat"
+              className="absolute inset-0 bg-fixed bg-no-repeat cta-bg-social-icons"
               style={{
                 backgroundImage: "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/a01fd465d_socialIcons.jpg')",
-                backgroundSize: '65%',
-                backgroundPosition: 'center 70%'
               }}
             ></div>
             <div className="absolute inset-0 bg-black/50"></div>
@@ -207,6 +206,53 @@ export default function SocialMediaBot() {
                 Schedule Your Demo Call
               </Button>
             </div>
+          </div>
+        </div>
+
+        {/* Mobile Landscape (568px-767px): Two Column Layout */}
+        <div className="max-w-7xl mx-auto hidden min-[568px]:flex md:hidden items-center gap-8">
+          <div className="flex-1 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 border border-orange-500/30">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Ready to Automate Your Social Media?
+            </h2>
+            <p className="text-lg text-pink-100 mb-6">
+              Let's set up your Instagram & Facebook bot to never miss a lead.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
+          <div className="flex-1">
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/a01fd465d_socialIcons.jpg"
+              alt="Social Media Icons"
+              className="w-full h-auto object-contain max-h-96 rounded-lg"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Portrait (<568px): Single Column, No Image */}
+        <div className="max-w-full mx-auto text-center block min-[568px]:hidden">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-orange-500/30">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Ready to Automate Your Social Media?
+            </h2>
+            <p className="text-base text-pink-100 mb-6">
+              Let's set up your Instagram & Facebook bot to never miss a lead.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
           </div>
         </div>
       </section>

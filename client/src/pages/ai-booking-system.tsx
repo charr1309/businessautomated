@@ -175,7 +175,8 @@ export default function AIBookingSystem() {
 
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto">
+        {/* Desktop/Tablet (≥768px): Card with animated WhatsApp */}
+        <div className="max-w-7xl mx-auto hidden md:block">
           <Card className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-green-500/30 p-12 relative overflow-hidden">
             {/* Sliding WhatsApp Icon */}
             <motion.div
@@ -217,6 +218,53 @@ export default function AIBookingSystem() {
               </Button>
             </div>
           </Card>
+        </div>
+
+        {/* Mobile Landscape (568px-767px): Two Column Layout */}
+        <div className="max-w-7xl mx-auto hidden min-[568px]:flex md:hidden items-center gap-8">
+          <div className="flex-1 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 border border-green-500/30">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Ready to Enable Text Booking?
+            </h2>
+            <p className="text-lg text-green-100 mb-6">
+              Let's set up WhatsApp & SMS booking for your business.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
+          <div className="flex-1">
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/6ebd3f4fc_whatsApp.png"
+              alt="WhatsApp"
+              className="w-full h-auto object-contain max-h-96"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Portrait (<568px): Single Column, No Image */}
+        <div className="max-w-full mx-auto text-center block min-[568px]:hidden">
+          <div className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 rounded-2xl p-8 border border-green-500/30">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Ready to Enable Text Booking?
+            </h2>
+            <p className="text-base text-green-100 mb-6">
+              Let's set up WhatsApp & SMS booking for your business.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
         </div>
       </section>
     </div>

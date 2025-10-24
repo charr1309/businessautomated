@@ -144,7 +144,8 @@ export default function SpeedToLead() {
 
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto">
+        {/* Desktop/Tablet (≥768px): Card with image */}
+        <div className="max-w-7xl mx-auto hidden md:block">
           <Card className="bg-black border-purple-500/30 p-12 relative overflow-hidden">
             <motion.div
               initial={{ opacity: 0 }}
@@ -178,6 +179,53 @@ export default function SpeedToLead() {
               </Button>
             </div>
           </Card>
+        </div>
+
+        {/* Mobile Landscape (568px-767px): Two Column Layout */}
+        <div className="max-w-7xl mx-auto hidden min-[568px]:flex md:hidden items-center gap-8">
+          <div className="flex-1 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Ready to Never Miss a Lead?
+            </h2>
+            <p className="text-lg text-purple-100 mb-6">
+              Let's set up your Speed-to-Lead automation and start converting more prospects.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
+          <div className="flex-1">
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/2feb6de5d_openart-image_ryB0-a0j_1761117878248_rawcopy.png"
+              alt="Lead Magnet"
+              className="w-full h-auto object-contain max-h-96"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Portrait (<568px): Single Column, No Image */}
+        <div className="max-w-full mx-auto text-center block min-[568px]:hidden">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-purple-500/30">
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Ready to Never Miss a Lead?
+            </h2>
+            <p className="text-base text-purple-100 mb-6">
+              Let's set up your Speed-to-Lead automation and start converting more prospects.
+            </p>
+            <Button
+              size="lg"
+              className="w-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+              data-testid="button-schedule-demo"
+              onClick={() => window.location.href = createPageUrl("Contact")}
+            >
+              Schedule Your Demo Call
+            </Button>
+          </div>
         </div>
       </section>
     </div>

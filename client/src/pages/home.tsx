@@ -331,20 +331,90 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
-        {/* Fixed Background Image */}
+        {/* Fixed Background Image - Desktop/Tablet */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat cta-bg-robot-head hidden sm:block"
           style={{
             backgroundImage:
               "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/45a4dfa4a_getty-images-fMx5M3lg8oI-unsplash.jpg')",
-            backgroundSize: "65%",
-            backgroundPosition: "center 60%",
           }}
         ></div>
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/60 hidden sm:block"></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        {/* Mobile Landscape (568px-767px): Two Column Layout */}
+        <div className="max-w-7xl mx-auto relative z-10 hidden min-[568px]:flex md:hidden items-center gap-8">
+          <div className="flex-1 bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" data-testid="heading-cta-section">
+              Ready to See AI Automation in Action?
+            </h2>
+            <p className="text-lg text-gray-200 mb-6">
+              Experience our AI Receptionist live demo and discover how it can transform your business
+            </p>
+            <div className="flex flex-col gap-3">
+              <Button
+                size="lg"
+                className="w-full bg-white text-gray-900 hover:bg-gray-100 shadow-xl"
+                data-testid="button-try-interactive-demo"
+                onClick={() => window.location.href = createPageUrl("AIReceptionist")}
+              >
+                Try Interactive Demo
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full border-2 border-white text-white bg-white/10 hover:bg-white hover:text-gray-900"
+                data-testid="button-schedule-setup-call"
+                onClick={() => window.location.href = createPageUrl("Contact")}
+              >
+                Schedule Your Setup Call
+              </Button>
+            </div>
+          </div>
+          <div className="flex-1">
+            <img
+              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/45a4dfa4a_getty-images-fMx5M3lg8oI-unsplash.jpg"
+              alt="AI Robot"
+              className="w-full h-auto object-contain max-h-96"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Portrait (<568px): Single Column, No Image */}
+        <div className="max-w-full mx-auto text-center relative z-10 block min-[568px]:hidden">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700">
+            <h2 className="text-2xl font-bold text-white mb-4" data-testid="heading-cta-section">
+              Ready to See AI Automation in Action?
+            </h2>
+            <p className="text-base text-gray-200 mb-6">
+              Experience our AI Receptionist live demo and discover how it can transform your business
+            </p>
+            <div className="flex flex-col gap-3">
+              <Button
+                size="lg"
+                className="w-full bg-white text-gray-900 hover:bg-gray-100 shadow-xl"
+                data-testid="button-try-interactive-demo"
+                onClick={() => window.location.href = createPageUrl("AIReceptionist")}
+              >
+                Try Interactive Demo
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full border-2 border-white text-white bg-white/10 hover:bg-white hover:text-gray-900"
+                data-testid="button-schedule-setup-call"
+                onClick={() => window.location.href = createPageUrl("Contact")}
+              >
+                Schedule Your Setup Call
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop/Tablet (≥768px): Text Over Background */}
+        <div className="max-w-7xl mx-auto text-center relative z-10 hidden md:block">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
