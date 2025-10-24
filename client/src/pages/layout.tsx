@@ -16,7 +16,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const navigation = [
     { name: "Home", href: createPageUrl("Home") },
-    { name: "AI Solutions", href: createPageUrl("AgentLibrary") },
     { name: "About", href: createPageUrl("About") },
     { name: "Contact", href: createPageUrl("Contact") },
   ];
