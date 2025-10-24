@@ -357,24 +357,24 @@
 
   /* Responsive CTA Background - Home Page Robot Head */
   .cta-bg-robot-head {
-    /* Large Desktop (≥1440px) - Perfect state, don't touch */
-    background-position: center 60%;
+    /* Large Desktop (≥1440px) - Show full head and neck */
+    background-position: center 70%;
     background-size: 65%;
   }
 
   @media (max-width: 1439px) and (min-width: 1024px) {
-    /* Laptop - Raise image, slightly smaller */
+    /* Laptop (Preview Window) - Show most of head and neck */
     .cta-bg-robot-head {
-      background-position: center 50%;
+      background-position: center 65%;
       background-size: 60%;
     }
   }
 
   @media (max-width: 1023px) and (min-width: 768px) {
-    /* Tablet - Raise image more, smaller size */
+    /* Tablet - Show head and part of neck */
     .cta-bg-robot-head {
-      background-position: center 40%;
-      background-size: 50%;
+      background-position: center 60%;
+      background-size: 55%;
     }
   }
 
