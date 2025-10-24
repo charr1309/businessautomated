@@ -216,9 +216,9 @@ export default function AIReceptionist() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat"
           style={{
-            backgroundImage: "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/45a4dfa4a_getty-images-fMx5M3lg8oI-unsplash.jpg')",
+            backgroundImage: "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/6656d163b_alex-shuper-uFCmJ6fiWGY-unsplash.png')",
             backgroundSize: '65%',
-            backgroundPosition: 'center 60%'
+            backgroundPosition: 'center'
           }}
         ></div>
         {/* Dark Overlay */}
