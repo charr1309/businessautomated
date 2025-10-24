@@ -174,29 +174,50 @@ export default function AIBookingSystem() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-green-900/20 to-emerald-900/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Automate Your Bookings?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Start accepting appointments 24/7 through WhatsApp and SMS
-            </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
-              data-testid="button-contact-us"
-              onClick={() => window.location.href = createPageUrl("Contact")}
+      <section className="px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-green-500/30 p-12 relative overflow-hidden">
+            {/* Sliding WhatsApp Icon */}
+            <motion.div
+              initial={{ x: -200, opacity: 0 }}
+              whileInView={{
+                x: [null, 950, 850],
+                opacity: [1, 1, 1]
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 1.5,
+                ease: "easeOut",
+                times: [0, 0.8, 1]
+              }}
+              className="absolute left-10 top-4 w-64 h-64 pointer-events-none"
+              style={{ zIndex: 0 }}
             >
-              Contact Us
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </motion.div>
+              <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/6ebd3f4fc_whatsApp.png"
+                alt="WhatsApp"
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
+
+            <div className="relative z-10 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Automate Your Bookings?
+              </h2>
+              <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+                Start accepting appointments 24/7 through WhatsApp and SMS
+              </p>
+              <Button
+                size="lg"
+                className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+                data-testid="button-contact-us"
+                onClick={() => window.location.href = createPageUrl("Contact")}
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
     </div>

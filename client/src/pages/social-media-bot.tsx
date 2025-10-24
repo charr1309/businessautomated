@@ -178,29 +178,37 @@ export default function SocialMediaBot() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-orange-900/20 to-red-900/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Start Engaging Your Audience Today
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Never miss a DM again with our intelligent social media bot
-            </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
-              data-testid="button-contact-us"
-              onClick={() => window.location.href = createPageUrl("Contact")}
-            >
-              Contact Us
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-          </motion.div>
+      <section className="px-4 sm:px-6 lg:px-8 py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative overflow-hidden rounded-2xl bg-black">
+            <div
+              className="absolute inset-0 bg-fixed bg-no-repeat"
+              style={{
+                backgroundImage: "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/a01fd465d_socialIcons.jpg')",
+                backgroundSize: '65%',
+                backgroundPosition: 'center 70%'
+              }}
+            ></div>
+            <div className="absolute inset-0 bg-black/50"></div>
+
+            <div className="relative z-10 p-12 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Start Engaging Your Audience Today
+              </h2>
+              <p className="text-xl text-pink-100 mb-8 max-w-2xl mx-auto">
+                Never miss a DM again with our intelligent social media bot
+              </p>
+              <Button
+                size="lg"
+                className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
+                data-testid="button-contact-us"
+                onClick={() => window.location.href = createPageUrl("Contact")}
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
