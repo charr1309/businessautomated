@@ -338,7 +338,7 @@ export default function Home() {
             backgroundImage:
               "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/45a4dfa4a_getty-images-fMx5M3lg8oI-unsplash.jpg')",
             backgroundSize: "65%",
-            backgroundPosition: "center 40%",
+            backgroundPosition: "center 60%",
           }}
         ></div>
         {/* Dark Overlay */}
