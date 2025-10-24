@@ -391,10 +391,10 @@ export default function Home() {
                 size="lg"
                 variant="outline"
                 className="w-full sm:w-auto border-2 border-white text-white bg-white/10 hover:bg-white hover:text-gray-900"
-                data-testid="button-talk-to-team"
+                data-testid="button-schedule-setup-call"
                 onClick={() => window.location.href = createPageUrl("Contact")}
               >
-                Talk to Our Team
+                Schedule Your Setup Call
               </Button>
             </motion.div>
           </motion.div>

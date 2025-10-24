@@ -214,10 +214,10 @@ export default function AIReceptionist() {
       <section className="relative px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
         {/* Fixed Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed bg-no-repeat"
+          className="absolute inset-0 bg-fixed bg-no-repeat"
           style={{
             backgroundImage: "url('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f71348cde45a754e241ed6/6656d163b_alex-shuper-uFCmJ6fiWGY-unsplash.png')",
-            backgroundSize: '65%',
+            backgroundSize: '30%',
             backgroundPosition: 'center'
           }}
         ></div>
@@ -231,19 +231,18 @@ export default function AIReceptionist() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Customer Service?
+              Ready to Deploy Your AI Receptionist?
             </h2>
-            <p className="text-xl text-gray-200 mb-8">
-              Schedule a demo and see how our AI receptionist can help your business
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Let us set up your AI receptionist. Professional implementation with full support.
             </p>
             <Button
               size="lg"
-              className="bg-white text-gray-900 hover:bg-gray-100 shadow-xl"
+              className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 shadow-xl border-2 border-white/80"
               data-testid="button-schedule-demo"
               onClick={() => window.location.href = createPageUrl("Contact")}
             >
-              Schedule Demo
-              <ArrowRight className="w-5 h-5 ml-2" />
+              Schedule Your Demo Call
             </Button>
           </motion.div>
         </div>

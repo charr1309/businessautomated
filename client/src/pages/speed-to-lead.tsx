@@ -163,19 +163,18 @@ export default function SpeedToLead() {
 
             <div className="relative z-10 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Start Capturing More Leads Today
+                Ready to Never Miss a Lead?
               </h2>
               <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-                Don't let slow response times cost you customers
+                Let's set up your Speed-to-Lead automation and start converting more prospects.
               </p>
               <Button
                 size="lg"
                 className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
-                data-testid="button-contact-us"
+                data-testid="button-schedule-demo"
                 onClick={() => window.location.href = createPageUrl("Contact")}
               >
-                Contact Us
-                <ArrowRight className="w-5 h-5 ml-2" />
+                Schedule Your Demo Call
               </Button>
             </div>
           </Card>

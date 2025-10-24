@@ -202,19 +202,18 @@ export default function AIBookingSystem() {
 
             <div className="relative z-10 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Automate Your Bookings?
+                Ready to Enable Text Booking?
               </h2>
               <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-                Start accepting appointments 24/7 through WhatsApp and SMS
+                Let's set up WhatsApp & SMS booking for your business.
               </p>
               <Button
                 size="lg"
                 className="bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
-                data-testid="button-contact-us"
+                data-testid="button-schedule-demo"
                 onClick={() => window.location.href = createPageUrl("Contact")}
               >
-                Contact Us
-                <ArrowRight className="w-5 h-5 ml-2" />
+                Schedule Your Demo Call
               </Button>
             </div>
           </Card>
