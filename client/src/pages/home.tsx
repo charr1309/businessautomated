@@ -261,7 +261,7 @@ export default function Home() {
                           {feature.description}
                         </p>
                         <Button
-                          variant="link"
+                          variant="ghost"
                           className="p-0 h-auto text-blue-400 group-hover:gap-2 transition-all"
                           data-testid={`link-demo-${feature.page.toLowerCase()}`}
                           onClick={() => window.location.href = createPageUrl(feature.page)}
