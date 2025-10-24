@@ -44,6 +44,15 @@ Preferred communication style: Simple, everyday language.
 - Agent Library page cataloging all available AI solutions
 - About and Contact pages for company information and lead capture
 
+**CTA (Call-to-Action) Sections**
+- All pages feature bottom CTA sections with background images from Supabase storage
+- Home page: Robot head image with `backgroundPosition: center 40%` to ensure full visibility
+- AI Receptionist: Robot hand on yellow mouse image (`6656d163b_alex-shuper-uFCmJ6fiWGY-unsplash.png`) centered
+- Speed-to-Lead: Purple-themed CTA with right-aligned background image
+- AI Booking System: Green-themed CTA with WhatsApp icon animation (slides right with bounce-back effect)
+- Social Media Bot: Social icons background image at `center 70%` position
+- All CTA sections use `py-20` padding and are optimized for full image visibility when scrolled to bottom
+
 ### Backend Architecture
 
 **Server Framework**
