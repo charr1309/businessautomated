@@ -64,13 +64,14 @@ export default function InteractiveDemo() {
     { user: "Sarah Johnson", bot: "Thank you, Sarah! Let me check availability and book that for you..." },
   ];
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+  const handleSend = (messageText?: string) => {
+    const textToSend = messageText || input;
+    if (!textToSend.trim()) return;
 
     // Add user message
     const userMessage: Message = {
       role: "user",
-      content: input,
+      content: textToSend,
       timestamp: new Date()
     };
     setMessages(prev => [...prev, userMessage]);
@@ -138,8 +139,7 @@ export default function InteractiveDemo() {
   };
 
   const handleQuickAction = (action: string) => {
-    setInput(action);
-    setTimeout(() => handleSend(), 100);
+    handleSend(action);
   };
 
   return (
